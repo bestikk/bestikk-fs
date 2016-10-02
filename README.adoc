@@ -26,4 +26,7 @@ bfs.walk('foo', function(path, stat) { console.log('path: ' + path + ', stat:' +
 
 // Asynchronously untar 'foo.tar.gz' to 'bar' directory (and rename tar base directory to 'qux')
 bfs.untar('foo.tar.gz', 'qux', 'bar', callback);
+
+// Synchronously concat the content of 'foo', 'bar', 'baz' files into 'quz'
+bfs.concatSync(['foo', 'bar', 'baz'], 'quz');
 ```

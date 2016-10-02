@@ -127,4 +127,23 @@ describe('Bestikk', function() {
       done();
     });
   });
+
+  describe('+ concatSync()', function () {
+    it('should concat files into the destination file', function (done) {
+      var dir = path.join(TEST_DIR, 'tmp-' + Date.now() + Math.random());
+
+      assert(!fs.existsSync(dir));
+      main.mkdirsSync(dir);
+      fs.writeFileSync(path.join(dir, 'foo'), 'foo', {encoding: 'utf8'});
+      fs.writeFileSync(path.join(dir, 'bar'), 'bar', {encoding: 'utf8'});
+      fs.writeFileSync(path.join(dir, 'baz'), 'baz', {encoding: 'utf8'});
+      main.concatSync([path.join(dir, 'foo'), path.join(dir, 'bar'), path.join(dir, 'baz')], path.join(dir, 'qux'));
+
+      assert(fs.existsSync(path.join(dir, 'qux')));
+      assert.equal(fs.readFileSync(path.join(dir, 'qux'), {encoding: 'utf8'}), 'foo\nbar\nbaz');
+
+      done();
+    });
+  });
+
 });
