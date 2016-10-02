@@ -146,4 +146,23 @@ describe('Bestikk', function() {
     });
   });
 
+  describe('+ copyToDirSync()', function () {
+    it('should copy the file to the directory', function (done) {
+      var src = path.join(TEST_DIR, 'tmp-' + Date.now() + Math.random());
+      var dest = path.join(TEST_DIR, 'tmp-' + Date.now() + Math.random());
+
+      assert(!fs.existsSync(src));
+      assert(!fs.existsSync(dest));
+      main.mkdirsSync(src);
+      assert(fs.existsSync(src));
+      // src/foo
+      fs.openSync(path.join(src, 'foo'), 'w');
+      main.copyToDirSync(path.join(src, 'foo'), dest);
+      assert(fs.existsSync(dest));
+      assert(fs.existsSync(path.join(dest, 'foo')));
+
+      done();
+    });
+  });
+
 });

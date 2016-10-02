@@ -66,6 +66,7 @@ FS.prototype.copySync = function(src, dest) {
   } else {
     this.mkdirsSync(path.dirname(dest));
     var data = fs.readFileSync(src);
+    log.transform('copy', src, dest);
     fs.writeFileSync(dest, data);
   }
 };
@@ -115,6 +116,11 @@ FS.prototype.concatSync = function(files, destination) {
     }
   }
   fs.writeFileSync(destination, Buffer.concat(buffers));
+};
+
+FS.prototype.copyToDirSync = function(from, toDir) {
+  var basename = path.basename(from);
+  this.copySync(from, path.join(toDir, basename));
 };
 
 module.exports = new FS();
