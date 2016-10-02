@@ -1,5 +1,5 @@
 {
-  "name": "bestikk-js",
+  "name": "bestikk-fs",
   "version": "0.1.0",
   "description": "A simple tool to do common file operations",
   "main": "index.js",
