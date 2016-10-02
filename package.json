@@ -1,0 +1,34 @@
+{
+  "name": "bestikk-js",
+  "version": "0.1.0",
+  "description": "A simple tool to do common file operations",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha spec/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bestikk/bestikk-fs.git"
+  },
+  "keywords": [
+    "fs",
+    "untar",
+    "mkdirs"
+  ],
+  "author": "Guillaume Grossetie (https://github.com/mogztter)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bestikk/bestikk-fs/issues"
+  },
+  "homepage": "https://github.com/bestikk/bestikk-fs#readme",
+  "dependencies": {
+    "async": "^2.0.1",
+    "bestikk-log": "^0.1.0",
+    "tar-fs": "^1.13.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.0",
+    "rewire": "^2.5.2"
+  }
+}
