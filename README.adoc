@@ -32,4 +32,7 @@ bfs.concatSync(['foo', 'bar', 'baz'], 'quz');
 
 // Synchronously copy 'foo' file to 'bar' directory (ie. file will be copied to 'bar/foo')
 bfs.copyToDirSync('foo', 'bar');
+
+// Synchronously update the version in 'package.json' with '1.0.0'
+bfs.updateFileSync('package.json', /"version": "(.*?)"/g, '"version": "1.0.0"');
 ```

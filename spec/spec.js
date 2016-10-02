@@ -165,4 +165,19 @@ describe('Bestikk', function() {
     });
   });
 
+  describe('+ updateFileSync()', function () {
+    it('should update the version in package.json with 1.0.0', function (done) {
+      var dir = path.join(TEST_DIR, 'tmp-' + Date.now() + Math.random());
+
+      assert(!fs.existsSync(dir));
+      main.mkdirsSync(dir);
+      fs.writeFileSync(path.join(dir, 'package.json'), '{"version": "0.1.0"}', {encoding: 'utf8'});
+      main.updateFileSync(path.join(dir, 'package.json'), /"version": "(.*?)"/g, '"version": "1.0.0"');
+
+      assert.equal(fs.readFileSync(path.join(dir, 'package.json'), {encoding: 'utf8'}), '{"version": "1.0.0"}');
+
+      done();
+    });
+  });
+
 });

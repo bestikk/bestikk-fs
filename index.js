@@ -123,4 +123,11 @@ FS.prototype.copyToDirSync = function(from, toDir) {
   this.copySync(from, path.join(toDir, basename));
 };
 
+FS.prototype.updateFileSync = function(file, regexp, newSubString) {
+  log.debug('update ' + file);
+  var data = fs.readFileSync(file, 'utf8');
+  var dataUpdated = data.replace(regexp, newSubString);
+  fs.writeFileSync(file, dataUpdated, 'utf8');
+};
+
 module.exports = new FS();
