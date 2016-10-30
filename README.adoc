@@ -1,7 +1,10 @@
 # Bestikk FS
 
-A simple tool to do common file operations.
+ifdef::env-github[]
+image:http://img.shields.io/npm/v/bestikk-fs.svg[npm version, link=https://www.npmjs.org/package/bestikk-fs]
+endif::[]
 
+A simple tool to do common file operations.
 
 ## Install
 
