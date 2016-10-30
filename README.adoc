@@ -1,6 +1,7 @@
 # Bestikk FS
 
 ifdef::env-github[]
+image:http://img.shields.io/travis/bestikk/bestikk-fs.svg[Travis build status, link=https://travis-ci.org/bestikk/bestikk-fs]
 image:http://img.shields.io/npm/v/bestikk-fs.svg[npm version, link=https://www.npmjs.org/package/bestikk-fs]
 endif::[]
 
