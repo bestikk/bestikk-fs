@@ -1,11 +1,13 @@
+sudo: false
+
 language: node_js
 node_js:
-  - "4.4.7"
+- 'lts/*'
+- 'node'
 
 before_script:
-  - npm install
+- npm install
 
 script:
- - npm run test
-
-sudo: false
+- npm run lint
+- npm test
