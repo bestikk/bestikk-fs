@@ -14,7 +14,7 @@ A simple tool to do common file operations.
 ## Usage
 
 ```javascript
-var bfs = require('bestikk-fs');
+const bfs = require('bestikk-fs')
 
 // Synchronously remove 'confidential' directory recursively
 bfs.removeSync('confidential');
@@ -26,10 +26,11 @@ bfs.mkdirsSync('foo/bar/baz');
 bfs.copySync('foo', 'bar');
 
 // Walk through a directory and call the callback function on each file
-bfs.walk('foo', function(path, stat) { console.log('path: ' + path + ', stat:' + stat); });
+bfs.walk('foo', (path, stat) => console.log('path: ' + path + ', stat:' + stat))
 
 // Asynchronously untar 'foo.tar.gz' to 'bar' directory (and rename tar base directory to 'qux')
-bfs.untar('foo.tar.gz', 'qux', 'bar', callback);
+bfs.untar('foo.tar.gz', 'qux', 'bar')
+  .then(() => /* do something */)
 
 // Synchronously concat the content of 'foo', 'bar', 'baz' files into 'quz'
 bfs.concatSync(['foo', 'bar', 'baz'], 'quz');
